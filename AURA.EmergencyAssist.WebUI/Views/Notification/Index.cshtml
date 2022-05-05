@@ -1,0 +1,67 @@
+﻿
+
+@using AURA.EmergencyAssist.Models.SignalR
+@model NotificationModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/lib/signalr/signalr.js"></script>
+<script src="~/js/notification.js"></script>
+<h1>Index</h1>
+@using (Html.BeginForm("Index", "Notification", FormMethod.Post, new { id = "NotificationModel" }))
+{
+    <div class="row">
+            Notifications:
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-6">
+            Header
+        </div>
+        <div class="col-6">
+            @Html.TextBoxFor(model => Model.Header, new { @maxlength = "50" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-5">
+            Message Content :
+        </div>
+        <div class="col-6">
+            @Html.TextBoxFor(model => Model.Content, new { @maxlength = "100" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-5">
+            Message Longitude :
+        </div>
+        <div class="col-6">
+            @Html.TextBoxFor(model => Model.Longitude, new { @maxlength = "100" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-5">
+            Message Latitude :
+        </div>
+        <div class="col-6">
+            @Html.TextBoxFor(model => Model.Latitude, new { @maxlength = "100" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-5">
+            Subscriber ID :
+        </div>
+        <div class="col-6">
+            @Html.TextBoxFor(model => Model.SubscriberID, new { @maxlength = "100" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <button type="submit">Send to All</button>
+    </div>
+}
+

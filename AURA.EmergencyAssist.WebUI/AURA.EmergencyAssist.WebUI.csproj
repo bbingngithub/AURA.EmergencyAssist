@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\signalr\signalr.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AURA.EmergencyAssist.BLL\AURA.EmergencyAssist.BLL.csproj" />
+    <ProjectReference Include="..\AURA.EmergencyAssist.Models\AURA.EmergencyAssist.Models.csproj" />
+    <ProjectReference Include="..\AURA.EmergencyAssist.SignalRHub\AURA.EmergencyAssist.SignalRHub.csproj" />
+  </ItemGroup>
+
+</Project>

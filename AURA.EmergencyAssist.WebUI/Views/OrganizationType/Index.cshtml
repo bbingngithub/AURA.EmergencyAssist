@@ -1,0 +1,48 @@
+﻿@model AURA.EmergencyAssist.Models.ResponseModel
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Organization Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Success)
+        {
+            @foreach (AURA.EmergencyAssist.Models.DataModels.OrganizationTypeDataModel item in (List<AURA.EmergencyAssist.Models.DataModels.OrganizationTypeDataModel>)Model.Data)
+            {
+                <tr>
+                    <td>
+                        @item.OrganizationTypeName
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.OrganizationTypeID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.OrganizationTypeID })
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td>
+                    No Data
+                </td>
+                <td>
+                    @Html.ActionLink("Create", "Create") 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

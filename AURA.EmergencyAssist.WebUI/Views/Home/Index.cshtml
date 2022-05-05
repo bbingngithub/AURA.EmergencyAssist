@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p id="UserId"></p>
+    <div id="notificationList"></div>
+</div>
+<script>
+    function ready() {
+
+    }
+    //random number between 1 and 100 for demo
+    var UserId = Math.floor((Math.random() * 100) + 1);
+    document.addEventListener("DOMContentLoaded", ready);
+
+    document.getElementById("UserId").innerHTML = "UserId: " + UserId;
+</script>
+<script src="~/lib/signalr/signalr.js"></script>
+<script src="~/js/notification.js"></script>
